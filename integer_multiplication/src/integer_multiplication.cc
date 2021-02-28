@@ -117,8 +117,8 @@ BinInt BinInt::naiveMult(const BinInt& other) const {
   return ans;
 }
 
-BinInt BinInt::kaMult(const BinInt& other) {
-  return karatsubaMult(*this, other);
+BinInt BinInt::kaMult(const BinInt& other, const int T) {
+  return karatsubaMult(*this, other, T);
 }
 
 size_t BinInt::size() const { return binarr_.size(); }

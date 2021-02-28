@@ -1,7 +1,7 @@
 #include <integer_multiplication.h>
 #include <karatsuba.h>
 
-BinInt karatsubaMult(const BinInt& n1, const BinInt& n2) {
+BinInt karatsubaMult(const BinInt& n1, const BinInt& n2, const int T) {
   BinInt n1_copy, n2_copy;
   if (n1.size() > n2.size()) {
     n1_copy = n1;
@@ -20,8 +20,8 @@ BinInt karatsubaMult(const BinInt& n1, const BinInt& n2) {
   return kHelper(n1_copy, n2_copy);
 }
 
-BinInt kHelper(const BinInt& n1, const BinInt& n2) {
-  if (n1.size() < 2 || n2.size() < 2) return n1.naiveMult(n2);
+BinInt kHelper(const BinInt& n1, const BinInt& n2, const int T) {
+  if (n1.size() < T || n2.size() < T) return n1.naiveMult(n2);
   size_t m1 = n1.size() / 2, m2 = n2.size() / 2;
 
   BinInt n1L = n1.slice(0, m1), n1R = n1.slice(m1, n1.size());

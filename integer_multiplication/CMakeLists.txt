@@ -4,7 +4,17 @@ project("Integer Multiplication")
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(intmult src/integer_multiplication.cc src/karatsuba.cc main.cpp)
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O4")
+
+add_executable(growth src/integer_multiplication.cc src/karatsuba.cc growth.cpp)
+
+add_executable(optimal_t src/integer_multiplication.cc src/karatsuba.cc optimal_t.cpp)
 
 include_directories(include)
 

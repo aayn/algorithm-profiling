@@ -28,7 +28,7 @@ class BinInt {
   BinInt slice(size_t start, size_t end) const;
 
   BinInt naiveMult(const BinInt& other) const;
-  BinInt kaMult(const BinInt& other);
+  BinInt kaMult(const BinInt& other, const int T = 1);
 
   size_t size() const;
   void push_back(bool b);
